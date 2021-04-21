@@ -27,8 +27,15 @@ RUN \
 	build-essential \
 	libx11-dev \
 	libxkbfile-dev \
+	software-properties-common \
 	libsecret-1-dev \
 	pkg-config && \
+ echo "**** install python3.8 ****" && \
+ add-apt-repository ppa:deadsnakes/ppa && \
+ apt-get update && \
+ apt-get install -y \
+ 	python3.8 \
+	python3.8-dev && \
  echo "**** install runtime dependencies ****" && \
  apt-get install -y \
 	git \
